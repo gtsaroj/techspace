@@ -6,5 +6,8 @@
     plugins: [react()],
     server: {
       host: "0.0.0.0",
+      proxy: {
+        "/api" : "https://localhost:3000"
+      }
     }
   })
