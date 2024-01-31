@@ -3,17 +3,17 @@ import ArrowForward from "@mui/icons-material/ArrowForward";
 
 const Ability = () => {
   return (
-    <div className="flex sm:flex-row flex-col justify-evenly sm:p-[50px] mt-[-19px] sm:mt-[0px] bg-[#171718] pt-[30px]">
-      <div className="w-1/2 flex flex-col gap-[30px] justify-start p-[10px] ">
-        <h3 className="sm:text-[40px] font-mono text-white text-[25px] w-[300px]">
+    <div className="flex sm:flex-row flex-col gap-[7px] justify-evenly sm:p-[50px] mt-[-19px] sm:mt-[0px] bg-[#171718] pt-[30px]">
+      <div className=" flex flex-col gap-[30px] justify-start p-[10px]  sm:w-1/2">
+        <h3 className="sm:text-[40px] font-mono text-white text-[25px] sm:w-[300px]">
           What Can I do for Your Needs
         </h3>
-        <span className="text-[15px] font-mono text-[#9b9da0] sm:w-[450px] w-[250px]">
+        <span className="text-[14px] font-mono text-[#9b9da0] sm:w-[450px] w-full ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
           magnam, iusto mollitia alias amet consequuntur iure veniam.
           Consequuntur, incidunt voluptatum.
         </span>
-        <div className=" flex gap-[20px] items-center justify-start">
+        <div className=" flex gap-[20px] items-center justify-center sm:justify-start">
           <div className="flex flex-col gap-[20px] items-center justify-center">
             <div className="flex flex-col   font-bold text-[#FFFF00]">
               +20

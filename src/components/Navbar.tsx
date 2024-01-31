@@ -20,19 +20,20 @@ const Navbar = () => {
       </div>
 
       <div
-        className="cursor-pointer sm:hidden relative"
+        className="cursor-pointer sm:hidden relative text-white "
         onClick={() => setChecked(!checked)}
       >
         <lord-icon
           src="https://cdn.lordicon.com/hqymfzvj.json"
           trigger="click"
+          style={{
+            color: "white",
+          }}
         />
       </div>
       <nav
-        className={`sm:flex sm:flex-row sm:gap-[70px] sm:mr-[10px] sm:visible absolute sm:sticky flex-col  w-full transition-all duration-100 ${
-          checked
-            ? "  bg-[#181616] top-[50px]  flex flex-col "
-            : "  top-[-200px]"
+        className={`flex sm:flex-row sm:gap-[70px] sm:mr-[10px] sm:sticky sm:bg-[#9c252500] absolute  left-0 font-serif flex-col transition-all duration-100 w-full ${
+          checked ? "  bg-[#181616] top-[50px] " : " top-[-200px]  "
         }`}
       >
         {navbar?.map((item) => (
