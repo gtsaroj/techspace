@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@botpress/cli": "^0.5.4",
+    "@emailjs/browser": "^4.1.0",
     "axios": "^1.6.5",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.331.0",
@@ -19,6 +20,7 @@
     "react-icons": "^5.0.1",
     "react-moving-text": "^0.0.7",
     "react-router-dom": "^6.21.3",
+    "react-toastify": "^10.0.4",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
@@ -28,6 +30,7 @@
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",

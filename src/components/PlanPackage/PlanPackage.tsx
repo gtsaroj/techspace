@@ -1,4 +1,3 @@
-import { ServerIcon } from "lucide-react";
 import React from "react";
 import { PlanPackages, PlanPackageTypes } from "../../Model/ServiceTypes";
 import { BadgeCheck } from "lucide-react";
