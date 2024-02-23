@@ -1,20 +1,31 @@
 import { navbar } from "../data.js";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+
+
+ export function Suscribe() {
+  return (
+    
+      <button className="py-2  px-7 text-[var(--light-text)]  rounded-md bg-[var(--primary-color)] duration-150 hover:bg-[var(--primary-bg)] ">Suscribe</button>
+    
+  )
+}
 const Navbar = () => {
   const [checked, setChecked] = useState(false);
   return (
-    <div className="flex justify-between sm:px-10  px-[5px] py-2 items-center ">
-      <div className="text-[var(--dark-text)] text-2xl transform scale-100">Techspace</div>
+    <div className="flex   justify-start sm:justify-between sm:px-10  sm:gap-20 gap-0  px-[5px] py-2 items-center ">
+      <div className="text-[var(--dark-text)] w-[50px] h-[50px] text-2xl transform scale-125">
+        <img src="../../../public/photos/Black White Elegant Monogram Initial Name Logo.png" alt="" />
+      </div>
       <div className="md:hidden">
-        <div className="relative flex items-center justify-center  w-[129px] h-8 cursor-pointer"
+        <div className="relative flex items-center justify-center  w-[60px] scale-[1.4] h-8 cursor-pointer"
           onClick={() => setChecked(!checked)}>
     {checked ? <X/> : <Menu/>}
 </div>
         <ul
           className={`  absolute gap-7 h-screen b-[0px] w-[129px] py-5 px-3 flex flex-col transition-all duration-100 ${
             checked ? "visible left-[0px]" : "invisible left-[-200px]"
-          } bg-[var(--dark-foreground)] text-[var(--light-secondary-text)] top-[50px]`}
+          } bg-[var(--dark-foreground)] text-[var(--light-secondary-text)] top-[66px]`}
         >
           <h3 className="flex items-center  justify-center text-red-600 font-bold text-lg pb-2 border-b-[1px]">
             Techspace
