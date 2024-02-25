@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
-import { ChangeEvent,  FormEvent, useRef, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FooterData = () => {
   return (
@@ -51,20 +51,21 @@ const FooterData = () => {
 };
 
 export const Footer = () => {
-const [Email, setEmail] = useState<string>("")
-  const [ SuscribingTechspace, setSuscribingTechspace] = useState(false);
-  const form = useRef<HTMLFormElement | null >(null);
+  const [Email, setEmail] = useState<string>("");
+  const [SuscribingTechspace, setSuscribingTechspace] = useState(false);
+  const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
-    setSuscribingTechspace(true)
+    setSuscribingTechspace(true);
     if (Email === "") {
-       toast.error("email required", {
-        position: "top-center"
-       })
-      setSuscribingTechspace(false)
-      return
+      toast.error("email required", {
+        position: "top-center",
+      });
+      setSuscribingTechspace(false);
+      return;
     }
+
     emailjs
       .sendForm("service_blgqfon", "template_kpkhvvc", form?.current, {
         publicKey: "sD-UiYCl_eZJRRZH8",
@@ -73,46 +74,55 @@ const [Email, setEmail] = useState<string>("")
         () => {
           console.log("SUCCESS!");
           toast.success("congruatulation, You suscribed techspace", {
-            position : "top-center"
-          })
-          setSuscribingTechspace(false)
+            position: "top-center",
+          });
+          setSuscribingTechspace(false);
         },
         (error) => {
           console.log("FAILED...", error.text);
           toast.error("failed due to connection error", {
-            position : "top-center"
-          })
+            position: "top-center",
+          });
         }
       );
   };
   return (
-    <div className="flex relative flex-col items-baseline gap-[10px] bg-[var(--dark-background)] px-10 py-24 sm:py-16 ">
-      <h3 className="text-2xl text-[var(--light-text)] ">Techspace</h3>
-      <div className="w-full">
-        <FooterData />
-      </div>
-      <div className="absolute  w-full sm:top-[-15%] top-[-8%] left-0 flex items-center justify-center">
-        <div className="  min-w-[300px] max-w-[800px] items-center  rounded-md flex md:flex-row flex-col   md:justify-evenly justify-center md:gap-7 gap-[3px] py-5 sm:py-10 px-[10px]  bg-gradient-to-t from-[var(--primary-color)] to-[var(--primary-bg)]">
+    <div  className="flex relative flex-col items-baseline gap-[10px] bg-[var(--dark-background)] px-10 py-24 sm:py-16 ">
+            <div  id="Suscribe"  className="absolute  w-full sm:top-[-15%] top-[-8%] left-0 flex items-center justify-center">
+        <div
+         
+          className="  min-w-[300px] max-w-[800px] items-center  rounded-md flex md:flex-row flex-col   md:justify-evenly justify-center md:gap-7 gap-[3px] py-5 sm:py-10 px-[10px]  bg-gradient-to-t from-[var(--primary-color)] to-[var(--primary-bg)]"
+        >
           <span className="md:text-xl text-[18px] text-[var(--light-secondary-text)]">
             Join us today for exclusive member discount
           </span>
-          <form action="" ref={form} onSubmit={sendEmail}>
+          <form  action="" ref={form} onSubmit={sendEmail}>
             <input
               type="email"
               placeholder="email"
               name="from_suscribe"
               value={Email}
-              onChange={(e : ChangeEvent<HTMLInputElement> )=>  setEmail(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
               className="py-[4px] px-[7px] outline-none rounded-tl-md rounded-bl-md"
-              
             />
-            <button type="submit" value="Send" className="bg-[var(--dark-background)] rounded-tr-md rounded-br-md py-[5px] text-[var(--light-text)] px-3 ">
+            <button
+              type="submit"
+              value="Send"
+              className="bg-[var(--dark-background)] rounded-tr-md rounded-br-md py-[5px] text-[var(--light-text)] px-3 "
+            >
               {SuscribingTechspace ? "loading..." : "suscribe"}
             </button>
           </form>
         </div>
       </div>
-      <ToastContainer/>
+      <h3 className="text-2xl text-[var(--light-text)] ">Techspace</h3>
+      <div className="w-full">
+        <FooterData />
+      </div>
+
+      <ToastContainer />
     </div>
   );
 };

@@ -2,26 +2,42 @@ import { navbar } from "../data.js";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+export function Suscribe() {
+  const ScrollTOSuscribe = () => {
+    const Suscribe1 = document.querySelector("#Suscribe");
 
- export function Suscribe() {
+    Suscribe1?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
-    
-      <button className="py-2  px-7 text-[var(--light-text)]  rounded-md bg-[var(--primary-color)] duration-150 hover:bg-[var(--primary-bg)] ">Suscribe</button>
-    
-  )
+    <button
+      onClick={ScrollTOSuscribe}
+      className="py-2  px-7 text-[var(--light-text)]  rounded-md bg-[var(--primary-color)] duration-150 hover:bg-[var(--primary-bg)] "
+    >
+      Suscribe
+    </button>
+  );
 }
 const Navbar = () => {
   const [checked, setChecked] = useState(false);
   return (
     <div className="flex   justify-start sm:justify-between sm:px-10  sm:gap-20 gap-0  px-[5px] py-2 items-center ">
-      <div className="text-[var(--dark-text)] w-[50px] h-[50px] text-2xl transform scale-125">
-        <img src="../../../public/photos/Black White Elegant Monogram Initial Name Logo.png" alt="" />
+      <div className="text-[var(--dark-text)] w-[80px]  text-2xl">
+        <img
+          src="../../../public/photos/Black White Elegant Monogram Initial Name Logo.png"
+          alt=""
+          className="h-[50px] scale-[1.3]"
+        />
       </div>
       <div className="md:hidden">
-        <div className="relative flex items-center justify-center  w-[60px] scale-[1.4] h-8 cursor-pointer"
-          onClick={() => setChecked(!checked)}>
-    {checked ? <X/> : <Menu/>}
-</div>
+        <div
+          className="relative flex items-center justify-center  w-[60px] scale-[1.4] h-8 cursor-pointer"
+          onClick={() => setChecked(!checked)}
+        >
+          {checked ? <X /> : <Menu />}
+        </div>
         <ul
           className={`  absolute gap-7 h-screen b-[0px] w-[129px] py-5 px-3 flex flex-col transition-all duration-100 ${
             checked ? "visible left-[0px]" : "invisible left-[-200px]"
