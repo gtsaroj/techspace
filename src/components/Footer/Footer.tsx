@@ -65,6 +65,9 @@ export const Footer = () => {
       setSuscribingTechspace(false);
       return;
     }
+    if (form.current === null) {
+      return console.error("reference of form is null");
+    }
 
     emailjs
       .sendForm("service_blgqfon", "template_kpkhvvc", form?.current, {
@@ -87,16 +90,16 @@ export const Footer = () => {
       );
   };
   return (
-    <div  className="flex relative flex-col items-baseline gap-[10px] bg-[var(--dark-background)] px-10 py-24 sm:py-16 ">
-            <div  id="Suscribe"  className="absolute  w-full sm:top-[-15%] top-[-8%] left-0 flex items-center justify-center">
-        <div
-         
-          className="  min-w-[300px] max-w-[800px] items-center  rounded-md flex md:flex-row flex-col   md:justify-evenly justify-center md:gap-7 gap-[3px] py-5 sm:py-10 px-[10px]  bg-gradient-to-t from-[var(--primary-color)] to-[var(--primary-bg)]"
-        >
+    <div className="flex relative flex-col items-baseline gap-[10px] bg-[var(--dark-background)] mt-20 px-10 py-24 sm:py-16 ">
+      <div
+        id="Suscribe"
+        className="absolute  w-full sm:top-[-15%] top-[-8%] left-0 flex items-center justify-center"
+      >
+        <div className="  min-w-[300px] max-w-[800px] items-center  rounded-md flex md:flex-row flex-col   md:justify-evenly justify-center md:gap-7 gap-[3px] py-5 sm:py-10 px-[10px]  bg-gradient-to-t from-[var(--primary-color)] to-[var(--primary-bg)]">
           <span className="md:text-xl text-[18px] text-[var(--light-secondary-text)]">
             Join us today for exclusive member discount
           </span>
-          <form  action="" ref={form} onSubmit={sendEmail}>
+          <form action="" ref={form} onSubmit={sendEmail}>
             <input
               type="email"
               placeholder="email"
@@ -117,7 +120,7 @@ export const Footer = () => {
           </form>
         </div>
       </div>
-      <h3 className="text-2xl text-[var(--light-text)] ">Techspace</h3>
+      <img src="https://res.cloudinary.com/dhnvpzxt6/image/upload/v1708875424/techspacelogo_ewufvo.png" className="w-[50px] h-[50px] rounded-full"/>
       <div className="w-full">
         <FooterData />
       </div>

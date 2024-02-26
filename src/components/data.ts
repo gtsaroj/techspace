@@ -1,34 +1,37 @@
-
-
 export const navbar: {
-    id: number
-    href: string
-    title: string
- }[] = [
+  id: number;
+
+  title: string;
+  path: string;
+}[] = [
   {
     id: 0,
-    href: "#home",
+
     title: "Home",
+    path: "/",
   },
   {
     id: 1,
-    href: "#home",
+
     title: "about",
+    path: "/",
   },
   {
     id: 2,
-    href: "#home",
+
     title: "contact",
+    path: "/contact",
   },
   {
     id: 3,
-    href: "#home",
+
     title: "project",
+    path: "/",
   },
   {
     id: 4,
-    href: "#home",
+
     title: "services",
+    path: "/services",
   },
 ];
-
