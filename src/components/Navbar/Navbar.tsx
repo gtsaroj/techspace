@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex   justify-start sm:justify-between sm:px-10  sm:gap-20 gap-0  px-[5px] py-2 items-center ">
+    <div className="flex   justify-start sm:justify-between sm:px-10 z-[10] sm:gap-20 gap-0  px-[5px] py-2 items-center ">
       <div className="text-[var(--dark-text)] w-[50px]  text-2xl">
         <img
           src="https://res.cloudinary.com/dhnvpzxt6/image/upload/v1708875424/techspacelogo_ewufvo.png"

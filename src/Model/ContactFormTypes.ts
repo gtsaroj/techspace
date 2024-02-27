@@ -1,6 +1,6 @@
 export interface ContactFormType {
   email: string;
-  phone: number | null;
+  phone: number | string;
   fullname: string;
   message: string;
 }

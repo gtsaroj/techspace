@@ -1,14 +1,14 @@
-import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { ContactIcon, MessageCircle, LocateIcon } from "lucide-react";
 import { ContactFormType } from "../../Model/ContactFormTypes";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const ValidationContactForm = () => {
   const [ContactForm, setContactForm] = useState<ContactFormType>({
     email: "",
-    phone: null,
+    phone: "",
     fullname: "",
     message: "",
   });
@@ -32,14 +32,14 @@ export const ValidationContactForm = () => {
         ContactForm["message"] &&
         ContactForm["phone"]) === ""
     ) {
-        return toast.error("All fields are required", {
-         position : "top-center"
-       });
+      return toast.error("All fields are required", {
+        position: "top-center",
+      });
     }
 
     if (form.current === null) {
-        return toast.error("error", {
-          position : "top-center"
+      return toast.error("error", {
+        position: "top-center",
       });
     }
 
@@ -47,14 +47,12 @@ export const ValidationContactForm = () => {
       emailjs.sendForm("service_blgqfon", "template_lhqr2ae", form?.current, {
         publicKey: "sD-UiYCl_eZJRRZH8",
       });
-        toast.success("we will contact soon", {
-            position : "top-center"
-        })
-   
-        
+      toast.success("we will contact soon", {
+        position: "top-center",
+      });
     } catch (error) {
-        toast.error(`connection error`, {
-          position : "top-center"
+      toast.error(`connection error`, {
+        position: "top-center",
       });
     }
   };

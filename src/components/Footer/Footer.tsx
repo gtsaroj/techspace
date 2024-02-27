@@ -93,7 +93,7 @@ export const Footer = () => {
     <div className="flex relative flex-col items-baseline gap-[10px] bg-[var(--dark-background)] mt-20 px-10 py-24 sm:py-16 ">
       <div
         id="Suscribe"
-        className="absolute  w-full sm:top-[-15%] top-[-8%] left-0 flex items-center justify-center"
+        className="absolute  w-full sm:top-[-15%] top-[-8%] left-0 flex items-center justify-center px-2"
       >
         <div className="  min-w-[300px] max-w-[800px] items-center  rounded-md flex md:flex-row flex-col   md:justify-evenly justify-center md:gap-7 gap-[3px] py-5 sm:py-10 px-[10px]  bg-gradient-to-t from-[var(--primary-color)] to-[var(--primary-bg)]">
           <span className="md:text-xl text-[18px] text-[var(--light-secondary-text)]">

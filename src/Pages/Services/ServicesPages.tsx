@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const TypesOfServices = () => {
+const TypesOfServices: React.FC = () => {
   return (
     <div className="flex flex-col gap-10">
       <div className=" flex  flex-col items-center justify-center ">
@@ -12,7 +13,10 @@ const TypesOfServices = () => {
         </p>
       </div>
       <div className="flex flex-col items-center gap-10 sm:px-4 px-7">
-        <div className="flex sm:flex-row flex-col justify-evenly gap-4 items-start sm:items-center w-full ">
+        <div
+          id="StaticPage"
+          className="flex sm:flex-row flex-col justify-evenly gap-4 items-start sm:items-center w-full "
+        >
           <div className="max-w-[400px] min-w-[100px] flex flex-col gap-5">
             <h3 className="sm:text-[30px] text-[25px] ">Static Website</h3>
             <p className="text-[14px] text-[var(--dark-text)]">
@@ -43,7 +47,10 @@ const TypesOfServices = () => {
             />
           </div>
         </div>
-        <div className="flex  flex-col items-start sm:flex-row-reverse justify-evenly gap-4 sm:items-center w-full ">
+        <div
+          id="EcommercePage"
+          className="flex  flex-col items-start sm:flex-row-reverse justify-evenly gap-4 sm:items-center w-full "
+        >
           <div className="max-w-[400px] min-w-[100px] flex flex-col gap-5">
             <h3 className="sm:text-[30px] text-[25px] ">Ecommerce platform</h3>
             <p className="text-[14px] text-[var(--dark-text)]">
@@ -74,9 +81,14 @@ const TypesOfServices = () => {
             />
           </div>
         </div>
-        <div className="flex  flex-col items-start justify-evenly gap-4 sm:items-center w-full ">
+        <div
+          id="FullStackPage"
+          className="flex  sm:flex-row flex-col items-start justify-evenly gap-4 sm:items-center w-full "
+        >
           <div className="max-w-[400px] min-w-[100px] flex flex-col gap-5">
-            <h3 className="sm:text-[30px] text-[25px] ">Full stack development</h3>
+            <h3 className="sm:text-[30px] text-[25px] ">
+              Full stack development
+            </h3>
             <p className="text-[14px] text-[var(--dark-text)]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
               ab dignissimos consequuntur, eum esse iusto deserunt sunt? Nihil,
@@ -105,9 +117,14 @@ const TypesOfServices = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col items-start   sm:flex-row-reverse justify-evenly gap-4 sm:items-center w-full ">
+        <div
+          id="SingleApplicationPage"
+          className="flex flex-col items-start   sm:flex-row-reverse justify-evenly gap-4 sm:items-center w-full "
+        >
           <div className="max-w-[400px] min-w-[100px] flex flex-col gap-5">
-            <h3 className="sm:text-[30px] text-[25px] ">Single Page Application</h3>
+            <h3 className="sm:text-[30px] text-[25px] ">
+              Single Page Application
+            </h3>
             <p className="text-[14px] text-[var(--dark-text)]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
               ab dignissimos consequuntur, eum esse iusto deserunt sunt? Nihil,
@@ -136,7 +153,10 @@ const TypesOfServices = () => {
             />
           </div>
         </div>
-        <div className="flex  flex-col items-start  justify-evenly gap-4 sm:items-center w-full ">
+        <div
+          id="CMSPage"
+          className="flex  flex-col items-start sm:flex-row  justify-evenly gap-4 sm:items-center w-full "
+        >
           <div className="max-w-[400px] min-w-[100px] flex flex-col gap-5">
             <h3 className="sm:text-[30px] text-[25px] ">CMS Development</h3>
             <p className="text-[14px] text-[var(--dark-text)]">
@@ -191,12 +211,14 @@ export const ServicesPages: React.FC = () => {
               Request development services
             </button>
           </a>
-          <a href={"#"}>
-            {" "}
-            <button className="px-2   text-[var(--light-background)] sm:py-[7px] py-[4px] sm:text-[16px] text-[14px] duration-200 hover:ring-[var(--button-color)] rounded-sm  ring-[var(--primary-green)] ring-[2px]">
+       
+            <Link
+              to={"/services/cost"}
+              className="px-2   text-[var(--light-background)] sm:py-[7px] py-[4px] sm:text-[16px] text-[14px] duration-200 hover:ring-[var(--button-color)] rounded-sm  ring-[var(--primary-green)] ring-[2px]"
+            >
               Calculate my project cost
-            </button>
-          </a>{" "}
+            </Link>
+       
         </div>
       </div>
       <TypesOfServices />
