@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import image from "../../../photos/cover-pic-web-development-new.svg";
 
 const TypesOfServices: React.FC = () => {
   return (
@@ -195,7 +196,7 @@ const TypesOfServices: React.FC = () => {
 export const ServicesPages: React.FC = () => {
   return (
     <div className="w-full flex flex-col  gap-4 pb-52">
-      <div className=' w-full flex flex-col gap-16 justify-center  items-stretch sm:pl-10 px-3 bg-[var(--primary-bg)] bg-[url("/photos/622.png")] bg-no-repeat bg-contain bg-right sm:h-[70vh] h-[50vh]'>
+      <div className={` w-full flex flex-col gap-16 justify-center  items-stretch sm:pl-10 px-3 bg-[var(--primary-bg)] bg-[url("/photos/622.png")] bg-no-repeat bg-contain bg-right sm:h-[70vh] h-[50vh]`}>
         <div className="w-full">
           <h3 className="text-[var(--light-text)] text-4xl">
             Web Development Services <span></span>
@@ -204,21 +205,20 @@ export const ServicesPages: React.FC = () => {
             We provide Web development services
           </h3>
         </div>
-        <div className="flex sm:gap-3 gap-2 w-full justify-center items-center">
+        <div className="flex sm:gap-3 gap-2 w-full justify-start items-center">
           <a href={"#"}>
             {" "}
             <button className=" px-2 text-[var(--light-background)] sm:py-[7px] py-[4px] sm:text-[16px] text-[14px] duration-200 hover:ring-[var(--button-color)] rounded-sm ring-[var(--primary-green)] ring-[2px]">
               Request development services
             </button>
           </a>
-       
-            <Link
-              to={"/services/cost"}
-              className="px-2   text-[var(--light-background)] sm:py-[7px] py-[4px] sm:text-[16px] text-[14px] duration-200 hover:ring-[var(--button-color)] rounded-sm  ring-[var(--primary-green)] ring-[2px]"
-            >
-              Calculate my project cost
-            </Link>
-       
+
+          <Link
+            to={"/services/cost"}
+            className="px-2   text-[var(--light-background)] sm:py-[7px] py-[4px] sm:text-[16px] text-[14px] duration-200 hover:ring-[var(--button-color)] rounded-sm  ring-[var(--primary-green)] ring-[2px]"
+          >
+            Calculate my project cost
+          </Link>
         </div>
       </div>
       <TypesOfServices />

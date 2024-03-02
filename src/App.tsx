@@ -1,4 +1,3 @@
-import path from "path";
 import Cost from "./Pages/CalculateTheCost/Cost";
 import Contact from "./Pages/Contact/Contact";
 import Home from "./Pages/Home/Home";

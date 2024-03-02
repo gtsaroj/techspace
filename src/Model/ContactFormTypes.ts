@@ -4,3 +4,8 @@ export interface ContactFormType {
   fullname: string;
   message: string;
 }
+
+export interface QueryContactType {
+  type: string,
+  name: string,
+}
