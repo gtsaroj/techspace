@@ -4,6 +4,10 @@
 @import "tailwindcss/utilities";
 @import "tailwindcss/components";
 
+
+
+
+
 @layer base {
   :root {
     --primary-color: #2c398d;

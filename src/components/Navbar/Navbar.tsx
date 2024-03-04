@@ -35,7 +35,7 @@ const Navbar = () => {
         {checked ? <X /> : <Menu />}
       </div>
       <ul
-        className={`  absolute gap-7 h-screen b-[0px] w-[129px] py-5 px-3 flex flex-col transition-all duration-100 ${
+        className={`  absolute gap-7 h-screen b-[0px] w-[180px] py-5 px-3 flex flex-col transition-all duration-100 ${
           checked ? "visible left-[0px]" : "invisible left-[-200px]"
         } bg-[var(--dark-foreground)] text-[var(--light-secondary-text)] top-[66px]`}
       >

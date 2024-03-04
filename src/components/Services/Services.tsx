@@ -43,9 +43,11 @@ const Services = () => {
         <div className="flex flex-col items-baseline flex-wrap min-w-[100px] max-w-[400px]">
           <h3 className="text-3xl ">What can i do for your needs</h3>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus enim odio est repellat laboriosam? Quibusdam officiis
-            quaerat ipsa beatae commodi!
+            Our team is dedicated to understanding your needs & providing modern
+            customized sulution as demand of our customers. weather you require
+            a customize website, ecommerce website, or a complex web
+            application, we are here to bring your digital vision into reality. select the plan & collabrate with us
+            to bring your vision into reality.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-7">

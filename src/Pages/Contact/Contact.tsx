@@ -1,9 +1,10 @@
-import { ChangeEvent, FormEvent, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState, useEffect } from "react";
 import { ContactIcon, MessageCircle, LocateIcon } from "lucide-react";
 import { ContactFormType } from "../../Model/ContactFormTypes";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReactLoading from 'react-loading';
 
 export const ValidationContactForm = () => {
   const [ContactForm, setContactForm] = useState<ContactFormType>({
@@ -56,6 +57,7 @@ export const ValidationContactForm = () => {
       });
     }
   };
+
 
   return (
     <form
@@ -119,10 +121,16 @@ export const ValidationContactForm = () => {
 };
 
 const Contact = () => {
+  const [PreLoading , SetPreLoading] = useState<boolean>(true);
+  useEffect(() => {
+   setTimeout(() => {
+   SetPreLoading(false)
+   }, 1000);
+ }, [PreLoading])
   return (
     <div>
       <div>
-        <div className="flex gap-10 sm:items-stretch justify-evenly py-5  sm:flex-row  flex-col-reverse items-center mx-3 ">
+        <div className={` ${PreLoading ? "blur-lg" : "blur-none" } flex gap-10 sm:items-stretch justify-evenly py-5  sm:flex-row  flex-col-reverse items-center mx-3`}>
           <ValidationContactForm />
           <div className=" bg-gradient-to-t from-[var(--primary-color)] to-[var(--primary-bg)] flex flex-col items-start px-5   py-5 rounded-md gap-16 ">
             <div className="flex flex-col items-start">
@@ -130,8 +138,7 @@ const Contact = () => {
                 Contact Information
               </h3>
               <p className="text-[14px] text-[#e0d8d8]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus, quibusdam.
+                fill the below form to touch with us. or you can send your quoutes & request web development services from here.
               </p>
             </div>
             <div className="flex flex-col gap-3 items-start">
@@ -163,7 +170,17 @@ const Contact = () => {
           ></iframe>
         </div>
       </div>
-      <div></div>
+      <div
+        className={`${PreLoading ? "absolute" : "hidden"}  w-full top-0 left-0 right-0 h-[100vh] flex flex-col justify-center bg-[#856d6d00]  items-center`}
+      >
+        <ReactLoading
+          type="balls"
+          className={`w-[40px] h-[30px] ${
+            PreLoading ? "flex items-center justify-center" : "hidden"
+          }`}
+          color="var(--primary-color)"
+        ></ReactLoading>
+      </div>
     </div>
   );
 };

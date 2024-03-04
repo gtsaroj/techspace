@@ -65,7 +65,7 @@ const AuthNav: React.FC = () => {
         </div>
       </div>
       <div
-        className={`  flex   justify-between  px-2 transition-all duration-150 ${
+        className={`  flex z-[2]   justify-between  px-2 transition-all duration-150 ${
           IsSticky ? "fixed shadow-xl top-[0px]" : "sticky top-[25px]"
         }  z-[+1]    w-full   justify-center items-center bg-slate-100`}
       >

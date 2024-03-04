@@ -20,9 +20,4 @@ export const WebCategory: WebDataType[] = [
     title: "CMS",
     path: "/services/cost/cms",
   },
-  {
-    id: 4,
-    title: "Custom web application",
-    path: "/services/cost/customwebpage",
-  },
 ];

@@ -6,18 +6,17 @@ import React, {
   ChangeEvent,
 } from "react";
 import "./StepWise.css";
-import { EcommerceQueryData, QueryDataType } from "../Model/QueryDataType";
+import { QueryDataType, CMSData } from "../Model/QueryDataType";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { ContactFormType } from "../Model/ContactFormTypes";
 import axios from "axios";
-import ReactLoading from 'react-loading';
+import ReactLoading from "react-loading";
 
 interface SelectedQueryType {
   questions?: string;
   answer?: string;
 }
-
 
 const CMS: React.FC = () => {
   const submitbuttonref = useRef<HTMLButtonElement | null>(null);
@@ -83,7 +82,7 @@ const CMS: React.FC = () => {
   };
 
   useEffect(() => {
-    const questionAndoption = EcommerceQueryData.find(
+    const questionAndoption = CMSData.find(
       (singlequery) => singlequery.id == ActiveStep
     );
     SetStoreQueryData(questionAndoption);
@@ -113,9 +112,9 @@ const CMS: React.FC = () => {
         SetSendingData(false);
       })
       .then(() => {
-       setTimeout(() => {
-        navigate("/")
-       }, 3000);
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
       })
       .catch(() => {
         toast.error(`failed while sending data`);
@@ -124,8 +123,8 @@ const CMS: React.FC = () => {
   return (
     <div className=" h-[100vh] w-full flex  flex-col gap-10 justify-start py-10 items-center">
       <div className=" sm:px-10 px-2 flex w-full flex-col justify-between sm:gap-10 gap-4 items-stretch">
-        <div className="flex w-full  sm:gap-10 gap-2  justify-center  py-5 px-6 bg-slate-400 items-center">
-          {EcommerceQueryData?.map((singleItem) => (
+        <div className="flex w-full overflow-hidden overflow-x-scroll  sm:gap-10 gap-2  justify-center  py-5 px-6 bg-slate-400 items-center">
+          {CMSData?.map((singleItem) => (
             <div key={singleItem.id} className="step-item z-0">
               <div
                 className={` ${
@@ -210,12 +209,25 @@ const CMS: React.FC = () => {
           className=" flex justify-center items-center bg-[var(--primary-color)] w-[100px] text-center py-2 px-4 rounded-md text-[var(--light-text)]"
           onClick={() => TakingRef()}
         >
-          {ActiveStep >= 6 ? (SendingData ? <ReactLoading className="flex items-center justify-center" type="spinningBubbles" height={"20px"} width={"20px"}/> : "send") : "next"}
+          {ActiveStep >= 6 ? (
+            SendingData ? (
+              <ReactLoading
+                className="flex items-center justify-center"
+                type="spinningBubbles"
+                height={"20px"}
+                width={"20px"}
+              />
+            ) : (
+              "send"
+            )
+          ) : (
+            "next"
+          )}
         </button>
       </div>
       <ToastContainer />
     </div>
-  )
-}
+  );
+};
 
-export default CMS
+export default CMS;
